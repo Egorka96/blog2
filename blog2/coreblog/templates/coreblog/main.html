@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1 align="center">Блог все обо всем</h1>
+{% block main_content %}
 <h3>Перечень статей</h3>
 {% if records_list %}
     <table border="1">
@@ -15,12 +16,13 @@
     </tr>
         {% for record in records_list %}
             <tr>
-                <td align="center">{{ record.id }}</td><td>{{ record.title }}</td> <td>{{ record.pub_date }}</td>
+                <td align="center">{{ record.id }}</td><td><a href="{%  url 'coreblog:detail' record.id %}">{{ record.title }}</a> </td> <td>{{ record.pub_date }}</td>
             </tr>
         {% endfor %}
     </table>
 {% else %}
     <p>Статей нет</p>
 {% endif %}
+{% endblock main_content %}
 </body>
 </html>

@@ -8,8 +8,11 @@ def index(request):
     context = {'records_list': records_list}
     return render(request, 'coreblog/main.html', context)
 
-def detail(request):
-    pass
+
+def detail(request, record_id):
+    record = Record.objects.get(id=record_id)
+    return render(request, 'coreblog/detail.html', {'record': record})
+
 
 def edit(request):
     pass

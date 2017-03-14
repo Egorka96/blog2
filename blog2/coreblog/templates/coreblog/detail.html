@@ -1,0 +1,10 @@
+{% extends 'coreblog/main.html' %}
+{% block main_content %}
+    <h3>{{ record.title }}</h3>
+    <p>{{ record.text }}</p>
+    <p><strong>Дата публикации: </strong>{{ record.pub_date }}</p>
+    <p><button>Редактировать статью</button>
+    <button>Удалить запись</button></p>
+    <a href="/">Вернуться на главную</a>
+
+{% endblock main_content%}
