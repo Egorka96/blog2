@@ -1,7 +1,16 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+
+from .models import Record
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    records_list = Record.objects.all()
+    context = {'records_list': records_list}
+    return render(request, 'coreblog/main.html', context)
 
-# Create your views here.
+def detail(request):
+    pass
+
+def edit(request):
+    pass
+

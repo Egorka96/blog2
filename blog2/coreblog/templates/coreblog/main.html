@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Блог статей</title>
+</head>
+<body>
+<h1 align="center">Блог все обо всем</h1>
+<h3>Перечень статей</h3>
+{% if records_list %}
+    <table border="1">
+    <tr>
+        <td><h4 align="center">Номер статьи</h4></td><td><h4 align="center">Заголовок</h4></td><td><h4 align="center">
+        Дата публикации</h4></td>
+    </tr>
+        {% for record in records_list %}
+            <tr>
+                <td align="center">{{ record.id }}</td><td>{{ record.title }}</td> <td>{{ record.pub_date }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>Статей нет</p>
+{% endif %}
+</body>
+</html>
