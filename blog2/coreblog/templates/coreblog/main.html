@@ -11,18 +11,19 @@
 {% if records_list %}
     <table border="1">
     <tr>
-        <td><h4 align="center">Номер статьи</h4></td><td><h4 align="center">Заголовок</h4></td><td><h4 align="center">
-        Дата публикации</h4></td>
+        <th>Номер статьи</th><th>Заголовок</th><th>Дата публикации</th>
     </tr>
         {% for record in records_list %}
             <tr>
-                <td align="center">{{ record.id }}</td><td><a href="{%  url 'coreblog:detail' record.id %}">{{ record.title }}</a> </td> <td>{{ record.pub_date }}</td>
+                <td align="center">{{ record.id }}</td><td><a href="{%  url 'coreblog:detail' record.id %}">
+                {{ record.title }}</a> </td> <td>{{ record.pub_date }}</td>
             </tr>
         {% endfor %}
     </table>
 {% else %}
     <p>Статей нет</p>
 {% endif %}
+    <a href="/add">Добавить статью</a>
 {% endblock main_content %}
 </body>
 </html>
