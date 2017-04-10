@@ -4,8 +4,8 @@
         <h3>{{ record.title }}</h3>
         <p>{{ record.text }}</p>
         <p><strong>Дата публикации: </strong>{{ record.pub_date }}</p>
-        <a href="/edit/{{ record.id }}">Редактировать статью</a>
-        <button name="delete">Удалить запись</button>
-        <a href="/">Вернуться на главную</a>
+        <a href="/edit/{{ record.id }}" class="btn btn-xs btn-info">Редактировать статью</a><br>
+        <button name="delete" class="btn btn-xs btn-info">Удалить запись</button><br>
+        <a href="/" class="btn btn-xs btn-info">Вернуться на главную</a><br>
     </form>
 {% endblock main_content%}

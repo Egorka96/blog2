@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="ru">
+{% extends 'coreblog/index.html' %}
+{% block change %}
 <head>
     <meta charset="UTF-8">
     <title>Блог статей</title>
 </head>
 <body>
-<h1 align="center">Блог все обо всем</h1>
+<div class="page-header">
+    <h1>Блог обо всем</h1>
+</div>
 {% block main_content %}
 <h3>Перечень статей</h3>
+    <div class="row">
+        <div class="col-md-6">
 {% if records_list %}
-    <table border="1">
+    <table class="table">
     <tr>
         <th>Номер статьи</th><th>Заголовок</th><th>Дата публикации</th>
     </tr>
@@ -20,10 +24,12 @@
             </tr>
         {% endfor %}
     </table>
+    </div>
+    </div>
 {% else %}
     <p>Статей нет</p>
 {% endif %}
-    <a href="/add">Добавить статью</a>
+    <a href="/add" class="btn btn-xs btn-info">Добавить статью</a></span>
 {% endblock main_content %}
 </body>
-</html>
+{% endblock change %}
