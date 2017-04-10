@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import Record
 from .forms import RecordForm
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.utils import timezone
 
 
@@ -14,8 +14,9 @@ def index(request):
 
 def detail(request, record_id):
     record = Record.objects.get(id=record_id)
-    if 'edit' in request.GET:
-        return render(request, 'coreblog/edit.html', {'record': record})
+    if 'delete' in request.GET:
+        record.delete()
+        return render(request, 'coreblog/main.html', {'records_list': Record.objects.all()})
     return render(request, 'coreblog/detail.html', {'record': record})
 
 
