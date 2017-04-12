@@ -1,11 +1,15 @@
 {% extends 'coreblog/main.html' %}
 {% block main_content %}
     <form method="get">
-        <h3>{{ record.title }}</h3>
+    <div class="jumbotron">
+        <h2>{{ record.title }}</h2>
         <p>{{ record.text }}</p>
         <p><strong>Дата публикации: </strong>{{ record.pub_date }}</p>
-        <a href="/edit/{{ record.id }}" class="btn btn-xs btn-info">Редактировать статью</a><br>
-        <button name="delete" class="btn btn-xs btn-info">Удалить запись</button><br>
-        <a href="/" class="btn btn-xs btn-info">Вернуться на главную</a><br>
+    </div>
+        <p>
+        <a href="/edit/{{ record.id }}" class="btn btn-lg btn-success">Редактировать статью</a>
+        <button type="button" class="btn btn-lg btn-danger">Удалить запись</button>
+        </p>
+        <a href="/" class="btn btn-lg btn-primary">Вернуться на главную</a><br>
     </form>
 {% endblock main_content%}

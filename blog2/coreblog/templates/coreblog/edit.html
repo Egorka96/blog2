@@ -1,8 +1,11 @@
 {% extends 'coreblog/main.html' %}
 {% block main_content %}
+    <div class="jumbotron">
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-sm btn-warning" type="submit">Сохранить</button>
+        <button class="btn btn-lg btn-success" type="submit">Сохранить</button>
+        <a href="/" class="btn btn-lg btn-success">На главную</a>
     </form>
+    </div>
 {% endblock main_content%}

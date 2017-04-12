@@ -1,17 +1,19 @@
-{% extends 'coreblog/index.html' %}
-{% block change %}
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Блог статей</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
 </head>
 <body>
 <div class="page-header">
-    <h1>Блог обо всем</h1>
+    <h1 class="blog-title">Блог обо всем</h1>
 </div>
 {% block main_content %}
 <h3>Перечень статей</h3>
-    <div class="row">
-        <div class="col-md-6">
 {% if records_list %}
     <table class="table">
     <tr>
@@ -24,12 +26,10 @@
             </tr>
         {% endfor %}
     </table>
-    </div>
-    </div>
 {% else %}
     <p>Статей нет</p>
 {% endif %}
-    <a href="/add" class="btn btn-xs btn-info">Добавить статью</a></span>
+    <a class="btn btn-lg btn-success" href="/add" role="button">Добавить статью</a></span>
 {% endblock main_content %}
 </body>
-{% endblock change %}
+</html>
